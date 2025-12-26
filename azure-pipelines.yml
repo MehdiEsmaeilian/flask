@@ -2,7 +2,9 @@ trigger:
 - main
 
 pool:
-  vmImage: 'ubuntu-latest'
+  name: Default         # یا نام Agent Pool شما
+  demands:
+    - agent.name -equals MEHDI
 
 steps:
 - task: UsePythonVersion@0
