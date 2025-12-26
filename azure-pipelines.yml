@@ -4,18 +4,17 @@ trigger:
 pool:
   name: Default
   demands:
-    - agent.name -equals MEHDI  # نام Agent شما
+    - agent.name -equals MEHDI
 
 steps:
-# نصب dependencies
 - script: |
     python -m venv venv
-    venv\Scripts\activate
-    pip install --upgrade pip
-    pip install -r requirements.txt
+    venv\Scripts\python.exe -m pip install --upgrade pip
+    venv\Scripts\python.exe -m pip install -r requirements.txt
   displayName: 'Install dependencies'
 
-# اجرای Flask در foreground (بدون start /B)
 - script: |
+    echo "Running Flask app..."
     venv\Scripts\python.exe app.py
   displayName: 'Run Flask interactively'
+
