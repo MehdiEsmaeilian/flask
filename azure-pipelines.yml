@@ -14,7 +14,8 @@ steps:
   displayName: 'Install dependencies'
 
 - script: |
-    echo "Running Flask app..."
-    venv\Scripts\python.exe app.py
-  displayName: 'Run Flask interactively'
+    echo "Running Flask in background..."
+    start "" venv\Scripts\python.exe app.py
+  displayName: 'Run Flask in background'
+
 
